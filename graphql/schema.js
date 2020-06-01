@@ -12,7 +12,10 @@ const resolvers = {
     title: post => post.title.rendered,
     url: post => post.link,
     content: post => post.content.rendered,
-    excerpt: post => post.excerpt.rendered,
+    excerpt: post => post.excerpt.rendered
+      .replace(/(<([^>]+)>)/ig,'')
+      .replace(/\\n/,'')
+    ,
     date: post => post.modified,
     date_utc: post => post.modified_gmt
   }
