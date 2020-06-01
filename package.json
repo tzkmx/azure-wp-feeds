@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server-azure-functions": "^2.14.1",
-    "graphql": "^14.6.0"
+    "dataloader": "^2.0.0",
+    "graphql": "^14.6.0",
+    "isomorphic-fetch": "^2.2.1"
   }
 }
