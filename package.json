@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-azure-functions": "^2.14.1",
+    "graphql": "^14.6.0"
+  }
 }
