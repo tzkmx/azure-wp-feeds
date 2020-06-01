@@ -17,6 +17,30 @@ const typeDefs = gql`
   }
 `
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  playground: {
+    tabs: [ {
+     query: `
+query DicesFeed($domain: String!) {
+  dices: posts(domain: $domain) {
+    ...postData
+  }
+}
+
+fragment postData on Post {
+  id
+  title
+  excerpt
+  date_utc
+}
+`,
+     variables: {
+       "domain": "www.dices.mx"
+     }
+   } ]
+  }
+})
 
 exports.graphqlHandler = server.createHandler()
