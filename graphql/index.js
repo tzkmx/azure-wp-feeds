@@ -14,6 +14,13 @@ const typeDefs = gql`
     excerpt: String!
     date: String
     date_utc: String
+    image(size: String!): PostThumbnail
+  }
+
+  type PostThumbnail {
+      url: String!
+      width: Int!
+      height: Int!
   }
 `
 
