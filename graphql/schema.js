@@ -7,14 +7,14 @@ const resolvers = {
       return fetch(`https://${domain}/wp-json/wp/v2/posts/`)
         .then(res => res.json())
     },
-    Post: {
-      title: post => post.title.rendered,
-      url: post => post.link,
-      content: post => post.content.rendered,
-      excerpt: post => post.excerpt.rendered,
-      date: post => post.modified,
-      date_utc: post => post.modified_gmt
-    }
+  },
+  Post: {
+    title: post => post.title.rendered,
+    url: post => post.link,
+    content: post => post.content.rendered,
+    excerpt: post => post.excerpt.rendered,
+    date: post => post.modified,
+    date_utc: post => post.modified_gmt
   }
 }
 
