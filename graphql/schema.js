@@ -1,6 +1,6 @@
 const fetch = require('isomorphic-fetch')
 
-export const resolvers = {
+const resolvers = {
   Query: {
     posts: function getPosts(root, args, ctx) {
       const { domain } = args
@@ -11,7 +11,11 @@ export const resolvers = {
       title: post => post.title.rendered,
       url: post => post.link,
       content: post => post.content.rendered,
-      excerpt: post => post.excerpt.rendered
+      excerpt: post => post.excerpt.rendered,
+      date: post => post.modified,
+      date_utc: post => post.modified_gmt
     }
   }
 }
+
+module.exports.resolvers = resolvers

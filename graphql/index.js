@@ -11,7 +11,9 @@ const typeDefs = gql`
     title: String!
     url: String!
     content: String!
-    excerpt: String!  
+    excerpt: String!
+    date: String
+    date_utc: String
   }
 `
 
