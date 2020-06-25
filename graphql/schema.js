@@ -15,6 +15,8 @@ const resolvers = {
     content: post => post.content.rendered,
     excerpt: post => post.excerpt.rendered
       .replace(/(<([^>]+)>)/ig,'')
+      .replace(/(\[&hellip;\])/ig,'...')
+      .replace(/(&[^;]+;)/ig,'')
       .replace(/\n/g,'')
       .trim()
     ,
