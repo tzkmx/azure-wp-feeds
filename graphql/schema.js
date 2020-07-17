@@ -24,8 +24,11 @@ const resolvers = {
       const id = post.featured_media
       const domain = post.link.split('/').slice(0, 3).join('/')
       const imageData = await imageDataLoader(domain).load(id)
-      const wantedSize = args['size']
-      return imageData.media_details.sizes[wantedSize]
+      if (!!imageData) {
+        const wantedSize = args['size']
+        return imageData.media_details.sizes[wantedSize]
+      }
+      return null
     },
     date: post => post.modified,
     date_utc: post => post.modified_gmt
